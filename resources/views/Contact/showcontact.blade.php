@@ -38,7 +38,7 @@
         <td>{{$item->contact}}</td>
         <td>{{$item->created_at}}</td>
         <td>{{$item->updated_at}}</td>
-        <td><a href = 'edit/{{ $item->id }}'>Edit</a></td>
+        <td><a href = '/edit/{{ $item->id }}'>Edit</a></td>
 
     </tr>
     @endforeach
