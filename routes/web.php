@@ -19,3 +19,6 @@ Route::get('/addcontact', function () {
     return view('Contact.addcontact');
 });
 Route::post('/submitcontact', 'App\Http\Controllers\ContactController@addData');
+Route::get('edit/{id}','App\Http\Controllers\ContactController@edit');
+Route::post('updatecontact/{id}','App\Http\Controllers\ContactController@update');
+
