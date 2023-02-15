@@ -27,7 +27,7 @@
         <th>Contact</th>
         <th>Created Date</th>
         <th>Updated Date</th>
-        <th>Updated Date</th>
+        <th>Action</th>
 
 
     </tr>
@@ -38,7 +38,7 @@
         <td>{{$item->contact}}</td>
         <td>{{$item->created_at}}</td>
         <td>{{$item->updated_at}}</td>
-        <td><a href = '/edit/{{ $item->id }}'>Edit</a></td>
+        <td><a href = '/edit/{{ $item->id }}'>Edit</a><br><a href = '/delete/{{ $item->id }}'>Delete</a></td>
 
     </tr>
     @endforeach

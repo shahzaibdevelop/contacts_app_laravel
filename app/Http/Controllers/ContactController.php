@@ -50,7 +50,12 @@ class ContactController extends Controller
                 else{
                         return 'Data Fields cannot be empty';
                 }
-                
+        }
+        public function delete($id){
+                $contact = Contact::find($id);
+                $contact->delete();
+                return $this->showData();
+
         }
     }
 
