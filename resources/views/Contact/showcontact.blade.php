@@ -14,6 +14,14 @@
             justify-content: center;
             align-items: center;
         }
+        table a{
+            background-color: #252525;
+            text-decoration: none;
+            color: aliceblue;
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -38,7 +46,7 @@
         <td>{{$item->contact}}</td>
         <td>{{$item->created_at}}</td>
         <td>{{$item->updated_at}}</td>
-        <td><a href = '/edit/{{ $item->id }}'>Edit</a><br><a href = '/delete/{{ $item->id }}'>Delete</a></td>
+        <td><a href = '/edit/{{ $item->id }}'>Edit</a><br><br><a href = '/delete/{{ $item->id }}'>Delete</a></td>
 
     </tr>
     @endforeach
