@@ -13,8 +13,16 @@
     <form action="submitcontact" method="POST">
         @csrf
         Enter Name : <input type="text" name="name" >
+        @error('name')            
+        <br>
+        <span style="color: red">{{ $message }}</span>
+        @enderror
         <br>
         Enter Number : <input type="text" name="contact" >
+        @error('contact')            
+        <br>
+        <span style="color: red">{{ $message }}</span>
+        @enderror
         <br>
         <button type="submit">Add Contact</button>
     </form>

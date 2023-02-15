@@ -8,18 +8,15 @@ use DB;
 class ContactController extends Controller
 {
         public function addData(Request $request){
-        
-                if($request->name != null && $request->contact != null)
-                {
+                $request->validate([
+                        'name' => 'required|min:3',
+                        'contact' => 'required|digits:11|numeric'
+                ]);
                         $contact = new Contact;
                         $contact->name=$request->name;
                         $contact->contact=$request->contact;
                       $contact->save();
                       return $this->showData();
-                }
-                else{
-                        return 'Data Fields cannot be empty'.'<br>'.'<a href="addcontact">Go Back</a>';
-                }
 
         }
         public function showData(){
@@ -36,11 +33,7 @@ class ContactController extends Controller
         public function update(Request $request,$id){
                 if($request->name != null && $request->contact != null)
                 {
-                        
-                //         $contactname=$request->name;
-                //         $contactcontact=$request->contact;
-                //         DB::update('update contacts set name = ?, contact=? where id = ?',[$contactname,$contactcontact,$id]);
-                //       return $this->showData();
+
                 $contact = Contact::find($id);
                 $contact->name = $request->input('name');
                 $contact->contact = $request->input('contact');
@@ -54,7 +47,8 @@ class ContactController extends Controller
         public function delete($id){
                 $contact = Contact::find($id);
                 $contact->delete();
-                return $this->showData();
+                return redirect('/');
+                // return $this->showData();
 
         }
     }

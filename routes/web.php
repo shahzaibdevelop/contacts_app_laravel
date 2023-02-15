@@ -22,4 +22,3 @@ Route::post('/submitcontact', 'App\Http\Controllers\ContactController@addData');
 Route::get('edit/{id}','App\Http\Controllers\ContactController@edit');
 Route::post('updatecontact/{id}','App\Http\Controllers\ContactController@update');
 Route::get('delete/{id}','App\Http\Controllers\ContactController@delete');
-
