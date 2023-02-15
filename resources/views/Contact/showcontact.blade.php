@@ -15,6 +15,9 @@
             justify-content: center;
             align-items: center;
         }
+        a{
+            margin-bottom: 20px;
+        }
         table a{
             background-color: #252525;
             text-decoration: none;
@@ -49,7 +52,6 @@
         <td>{{$item->created_at}}</td>
         <td>{{$item->updated_at}}</td>
         <td><a href = '/edit/{{ $item->id }}'>Edit</a><br><br><a href = '/delete/{{ $item->id }}'>Delete</a></td>
-
     </tr>
     @endforeach
    </table>

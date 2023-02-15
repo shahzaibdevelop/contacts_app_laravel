@@ -15,8 +15,8 @@ class ContactController extends Controller
                         $contact = new Contact;
                         $contact->name=$request->name;
                         $contact->contact=$request->contact;
-                      $contact->save();
-                      return $this->showData();
+                        $contact->save();
+                        return $this->showData();
 
         }
         public function showData(){
@@ -28,21 +28,21 @@ class ContactController extends Controller
                 $contactid=$id;
                 $contactrow=  contact::find($contactid);
                 return view('Contact.update',compact('contactrow'));
-                
         }
         public function update(Request $request,$id){
-                if($request->name != null && $request->contact != null)
-                {
-
+                
+                $request->validate([
+                        'name' => 'required|min:3',
+                        'contact' => 'required|digits:11|numeric'
+                ]);
+                
                 $contact = Contact::find($id);
                 $contact->name = $request->input('name');
                 $contact->contact = $request->input('contact');
                 $contact->save();
                 return $this->showData();
-                }
-                else{
-                        return 'Data Fields cannot be empty';
-                }
+                
+               
         }
         public function delete($id){
                 $contact = Contact::find($id);

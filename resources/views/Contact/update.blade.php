@@ -11,6 +11,7 @@
     <style>
         form{
             margin: 80px;
+            max-width: 500px;
         }
         h1{
             margin:50px 0px; 
@@ -25,17 +26,25 @@
             <label for="name" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="name" name="name" value="{{$contactrow->name}}">
+              @error('name')            
+        
+              <span style="color: red">{{ $message }}</span>
+              @enderror
             </div>
           </div>
-        <br>
+        
         <div class="row mb-3">
             <label for="contact" class="col-sm-2 col-form-label">Contact</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="contact" name="contact" value="{{$contactrow->contact}}">
+              @error('contact')            
+        
+              <span style="color: red">{{ $message }}</span>
+              @enderror
             </div>
           </div>
         <br>
-        <button type="submit" class="btn btn-dark position-absolute top-70 start-50 translate-middle"s>Update Contact</button>
+        <button type="submit" class="btn btn-dark position-absolute top-70 start-50 translate-middle">Update Contact</button>
     </form>
     
 

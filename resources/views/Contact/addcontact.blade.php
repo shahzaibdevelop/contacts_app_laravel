@@ -28,10 +28,10 @@
             </div>
           </div>
         @error('name')            
-        <br>
+        
         <span style="color: red">{{ $message }}</span>
         @enderror
-        <br>
+        
         <div class="row mb-3">
             <label for="contact" class="col-sm-2 col-form-label">Contact</label>
             <div class="col-sm-10">
@@ -39,10 +39,10 @@
             </div>
           </div>
         @error('contact')            
-        <br>
+        
         <span style="color: red">{{ $message }}</span>
         @enderror
-        <br>
+        
         <button type="submit" class="btn btn-dark position-absolute top-50 start-50 translate-middle">Add Contact</button>
 
          
